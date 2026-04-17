@@ -1,0 +1,11 @@
+# Railway: set this service's Root Directory to `server` in the project settings.
+# Env vars: MONGO_URI, JWT_SECRET, CLIENT_ORIGIN, PORT (optional), OPENAI_* (optional)
+
+[build]
+builder = "NIXPACKS"
+buildCommand = "npm install && npm run build"
+
+[deploy]
+startCommand = "npm run start"
+healthcheckPath = "/health"
+healthcheckTimeout = 300
